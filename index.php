@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-  <title>Management System</title>
+  <title>Vacation Management System</title>
   <style>
     body,
     html {
@@ -42,11 +42,11 @@
                   <div class="container mt-4">
                     <div class="btn-toolbar justify-content-between">
                       <div class="btn-group">
-                        <a href="employee/dashboard.php" class="btn btn-primary btn-lg">Log-in As User </a>
+                        <a href="src/User/dashboard.php" class="btn btn-primary btn-lg">Log-in As User </a>
                       </div>
 
                       <div class="btn-group">
-                        <a href="admin/dashboard.php" class="btn btn-primary btn-lg">Log-In As Admin</a>
+                        <a href="src/Admin/dashboard.php" class="btn btn-primary btn-lg">Log-In As Admin</a>
                       </div>
                     </div>
                   </div>
