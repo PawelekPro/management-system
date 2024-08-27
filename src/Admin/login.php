@@ -23,7 +23,6 @@
 
 <body>
 
-
     <div class="bg">
         <div class="login-form-bg h-100">
             <div class="container h-100">
@@ -33,8 +32,9 @@
                             <div class="card login-form mb-0">
                                 <div class="card-body pt-5 shadow">
 
-                                    <h4 class="text-center">Log-in as Employee User</h4>
+                                    <h4 class="text-center">Log-in as Administrator</h4>
                                     <div class="text-center my-5"> <?php echo $login_Err; ?> </div>
+
                                     <form method="POST" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>">
 
                                         <div class="form-group">
@@ -48,14 +48,15 @@
                                             <label>Password:</label>
                                             <input type="password" class="form-control" name="password">
                                             <?php echo $pass_err; ?>
+
                                         </div>
 
                                         <div class="form-group">
                                             <input type="submit" value="Log-In" class="btn btn-primary btn-lg w-100 "
                                                 name="signin">
                                         </div>
-                                        <p class=" login-form__footer">Not a employee user? <a href="../Admin/login.php"
-                                                class="text-primary">Log-In </a>as Admin now</p>
+                                        <p class=" login-form__footer">Not a admin? <a href="../User/login.php"
+                                                class="text-primary">Log-In </a>as Employee now</p>
                                     </form>
                                 </div>
                             </div>

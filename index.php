@@ -17,17 +17,11 @@
       height: 100%;
       margin: 0;
     }
-
-    .login-form-bg {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
   </style>
 </head>
 
 <body>
-  <div class="bg border">
+  <div class="bg">
     <div class="login-form-bg h-100">
       <div class="container">
         <div class="row justify-content-center">
@@ -42,7 +36,7 @@
                   <div class="container mt-4">
                     <div class="btn-toolbar justify-content-between">
                       <div class="btn-group">
-                        <a href="src/User/dashboard.php" class="btn btn-primary btn-lg">Log-in As User </a>
+                        <a href="src/User/dashboard.php" class="btn btn-primary btn-lg">Log-in As User</a>
                       </div>
 
                       <div class="btn-group">
