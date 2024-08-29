@@ -14,7 +14,7 @@ if (empty($_SESSION["email"])) {
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title> Vacation Management System</title>
 
-    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <style>
         .hidden {
