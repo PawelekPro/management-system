@@ -25,8 +25,50 @@
 
     <!-- php script start -->
     <?php
-    $email_err = $pass_err = $login_Err = "";
+    require_once "../Config/utils.php";
+    $emailErr = $passErr = $loginErr = "";
     $email = $pass = "";
+
+    debugToConsole("Login php state before server request.");
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        if (empty($_REQUEST["email"])) {
+            $emailErr = "<p style='color:red'> * Email can not be empty</p>";
+        } else {
+            $email = $_REQUEST["email"];
+        }
+
+        if (empty($_REQUEST["password"])) {
+            $passErr = "<p style='color:red'> * Password can not be empty</p>";
+        } else {
+            $pass = $_REQUEST["password"];
+        }
+
+        debugToConsole(["Requested login for user with email:", $email]);
+        if (!empty($email) && !empty($pass)) {
+            // Connect to database
+            require_once "../Config/connection.php";
+            $sqlQuery = "SELECT * FROM admin WHERE email='$email' && password='$pass'";
+            $res = mysqli_query($conn, $sqlQuery);
+
+            if (mysqli_num_rows($res) > 0) {
+                while ($rows = mysqli_fetch_assoc($res)) {
+                    session_start();
+                    session_unset();
+                    $_SESSION["email"] = $rows["email"];
+                    header("Location: dashboard.php?login-sucess");
+                }
+                echo "<script>console.log('Login successful for user: $email');</script>";
+            } else {
+                $loginErr = "<div class='alert alert-warning alert-dismissible fade show'>
+                <strong>Invalid email or password</strong>
+                <button type='button' class='close' data-dismiss='alert' >
+                <span aria-hidden='true'>&times;</span>
+                </button></div>";
+                echo "<script>console.log('Login failed for user: $email');</script>";
+            }
+        }
+    }
     ?>
     <!-- php script end -->
 
@@ -40,7 +82,7 @@
                                 <div class="card-body shadow">
 
                                     <h4 class="text-center pb-4">Log-in as Administrator</h4>
-                                    <div class="text-center my-5"> <?php echo $login_Err; ?> </div>
+                                    <div class="text-center my-5"> <?php echo $loginErr; ?> </div>
 
                                     <form method="POST" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>">
 
@@ -48,13 +90,13 @@
                                             <label>Email:</label>
                                             <input type="email" class="form-control" value="<?php echo $email; ?>"
                                                 name="email">
-                                            <?php echo $email_err; ?>
+                                            <?php echo $emailErr; ?>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Password:</label>
                                             <input type="password" class="form-control" name="password">
-                                            <?php echo $pass_err; ?>
+                                            <?php echo $passErr; ?>
 
                                         </div>
 
