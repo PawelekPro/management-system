@@ -13,11 +13,11 @@
 
     <title>Vacation Management System</title>
     <style>
-        body,
-        html {
-            height: 100%;
-            margin: 0;
-        }
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+    }
     </style>
 </head>
 
@@ -32,14 +32,14 @@
 
     <div class="bg">
         <div class="login-form-bg h-100">
-            <div class="container h-100">
-                <div class="row justify-content-center h-100">
+            <div class="container">
+                <div class="row justify-content-center">
                     <div class="col-xl-6">
                         <div class="form-input-content">
-                            <div class="card login-form mb-0">
-                                <div class="card-body pt-5 shadow">
+                            <div class="card login-form mt-5">
+                                <div class="card-body shadow">
 
-                                    <h4 class="text-center">Log-in as Administrator</h4>
+                                    <h4 class="text-center pb-4">Log-in as Administrator</h4>
                                     <div class="text-center my-5"> <?php echo $login_Err; ?> </div>
 
                                     <form method="POST" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>">
@@ -65,6 +65,7 @@
                                         <p class=" login-form__footer">Not a admin? <a href="../User/login.php"
                                                 class="text-primary">Log-In </a>as Employee now</p>
                                     </form>
+
                                 </div>
                             </div>
                         </div>
@@ -76,10 +77,10 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
-        </script>
+    </script>
 </body>
 
 </html>
