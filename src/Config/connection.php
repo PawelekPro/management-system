@@ -2,8 +2,8 @@
 
 $dbhost = "localhost";
 $dbuser = "root";
-$dbpass = "0808";
-$dbname = "employees";
+$dbpass = "";
+$dbname = "VMSystem";
 
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
