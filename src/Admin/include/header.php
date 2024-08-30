@@ -15,13 +15,30 @@ if (empty($_SESSION["email"])) {
     <title> Vacation Management System</title>
 
     <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/custom/css/style.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <style>
-        .hidden {
-            display: none;
-        }
+    .hidden {
+        display: none;
+    }
     </style>
 
 </head>
 
-</html>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <div id="main-wrapper">
+
+    </div>

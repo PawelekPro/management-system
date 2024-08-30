@@ -29,7 +29,8 @@
 <!--**********************************
         Scripts
     ***********************************-->
-
+<script src="../../../assets/plugins/jquery/jquery.min.js"></script>
+<script src="../../../assets/custom/js/custom.js"></script>
 
 </body>
 

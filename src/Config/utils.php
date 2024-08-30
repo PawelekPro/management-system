@@ -14,4 +14,3 @@ function initializeSession()
     session_start();
     $_SESSION["email"] = "";
 }
-?>
