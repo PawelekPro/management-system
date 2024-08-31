@@ -7,17 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
     <title>Vacation Management System</title>
     <style>
-        body,
-        html {
-            height: 100%;
-            margin: 0;
-        }
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+    }
     </style>
 </head>
 
@@ -72,6 +70,7 @@
         </p>
     </footer>
 
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
