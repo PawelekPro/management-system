@@ -17,14 +17,18 @@ if (empty($_SESSION["email"])) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
     <link href="../../../assets/css/style.css" rel="stylesheet">
+    <link href="../../../assets/plugins/sidebar/css/sidebars.css" rel="stylesheet">
 
     <script src="../../../assets/plugins/jquery/jquery.min.js"></script>
+    <script src="../../../assets/plugins/sidebar/js/sidebars.js"></script>
 
     <style>
-        .hidden {
-            display: none;
-        }
+    .hidden {
+        display: none;
+    }
     </style>
 
 </head>
@@ -74,58 +78,78 @@ if (empty($_SESSION["email"])) {
         <!-- Header end -->
 
         <!-- Sidebar start -->
-        <div class="nk-sidebar">
-            <div class="nk-nav-scroll">
-                <ul class="metismenu list-unstyled" id="menu">
-                    <br><br>
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;">
+            <a href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi pe-none me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+                <span class="fs-4">Admin Panel</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="./dashboard.php" class="nav-link active" aria-current="page">
+                        <i class="bi bi-speedometer2 me-2"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link link-body-emphasis has-arrow" data-bs-toggle="collapse"
+                        data-bs-target="#employeeMenu">
+                        <i class="bi bi-people-fill me-2"></i>
+                        Employee
+                    </a>
+                    <ul class="collapse list-unstyled" id="employeeMenu">
+                        <li><a href="./add-employee.php" class="nav-link link-body-emphasis"><i
+                                    class="bi bi-person-plus-fill me-2"></i>Add Employee</a></li>
+                        <li><a href="./manage-employee.php" class="nav-link link-body-emphasis"><i
+                                    class="bi bi-person-lines-fill me-2"></i>Manage Employee</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="nav-link link-body-emphasis has-arrow" data-bs-toggle="collapse"
+                        data-bs-target="#adminMenu">
+                        <i class="bi bi-person-badge-fill me-2"></i>
+                        Admin
+                    </a>
+                    <ul class="collapse list-unstyled" id="adminMenu">
+                        <li><a href="./add-admin.php" class="nav-link link-body-emphasis"><i
+                                    class="bi bi-person-plus-fill me-2"></i>Add Admin</a></li>
+                        <li><a href="./manage-admin.php" class="nav-link link-body-emphasis"><i
+                                    class="bi bi-person-lines-fill me-2"></i>Manage Admins</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./manage-leave.php" class="nav-link link-body-emphasis">
+                        <i class="bi bi-calendar-check-fill me-2"></i>
+                        Manage Employee Leave
+                    </a>
+                </li>
+                <li>
+                    <a href="./logout.php" class="nav-link link-body-emphasis">
+                        <i class="bi bi-box-arrow-right me-2"></i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <strong>mdo</strong>
+                </a>
+                <ul class="dropdown-menu text-small shadow">
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
                     <li>
-                        <a href="./dashboard.php">
-                            <i class="icon-home menu-icon"></i><span class="nav-text">Dashboard</span>
-                        </a>
+                        <hr class="dropdown-divider">
                     </li>
-
-                    <li>
-                        <a class="has-arrow" href="#" aria-expanded="false">
-                            <i class="fa fa-address-card-o menu-icon"></i><span class="nav-text">Employee</span>
-                        </a>
-                        <ul class="list-unstyled" aria-expanded="false">
-                            <li><a href="./add-employee.php"><i class="icon-plus menu-icon"></i><span
-                                        class="nav-text">Add Employee</span></a></li>
-                            <li><a href="./manage-employee.php"><i class="fa fa-tasks menu-icon"></i><span
-                                        class="nav-text">Manage Employee</span></a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a class="has-arrow" href="#" aria-expanded="false">
-                            <i class="fa fa-address-card-o menu-icon"></i><span class="nav-text">Admin</span>
-                        </a>
-                        <ul class="list-unstyled" aria-expanded="false">
-                            <li><a href="./add-admin.php"><i class="icon-plus menu-icon"></i><span class="nav-text">Add
-                                        Admin</span></a></li>
-                            <li><a href="./manage-admin.php"><i class="fa fa-ttasks menu-icon"></i><span
-                                        class="nav-text">Manage Admins</span></a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./manage-leave.php">
-                            <i class="fa fa-tasks menu-icon"></i><span class="nav-text">Manage Employee Leave</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./logout.php">
-                            <i class="icon-logout menu-icon"></i><span class="nav-text">Logout</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./profile.php">
-                            <i class="fa fa-user menu-icon"></i><span class="nav-text">Profile</span>
-                        </a>
-                    </li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
                 </ul>
             </div>
         </div>
+
         <!-- Sidebar end -->
 
         <!-- Content body start -->
