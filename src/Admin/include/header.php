@@ -15,15 +15,16 @@ if (empty($_SESSION["email"])) {
     <title> Vacation Management System</title>
 
     <!-- Bootstrap CSS -->
-    <link href="../../../assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../assets/custom/css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
 
     <script src="../../../assets/plugins/jquery/jquery.min.js"></script>
 
     <style>
-    .hidden {
-        display: none;
-    }
+        .hidden {
+            display: none;
+        }
     </style>
 
 </head>

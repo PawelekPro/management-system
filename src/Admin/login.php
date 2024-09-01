@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <title>Vacation Management System</title>
     <style>
@@ -84,14 +85,14 @@
 
                                     <form method="POST" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>">
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-2">
                                             <label>Email:</label>
                                             <input type="email" class="form-control" value="<?php echo $email; ?>"
                                                 name="email">
                                             <?php echo $emailErr; ?>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-4">
                                             <label>Password:</label>
                                             <input type="password" class="form-control" name="password">
                                             <?php echo $passErr; ?>
@@ -115,7 +116,9 @@
         </div>
     </div>
 
-    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
