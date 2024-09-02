@@ -26,9 +26,9 @@ if (empty($_SESSION["email"])) {
     <script src="../../../assets/plugins/sidebar/js/sidebars.js"></script>
 
     <style>
-    .hidden {
-        display: none;
-    }
+        .hidden {
+            display: none;
+        }
     </style>
 
 </head>
@@ -48,37 +48,10 @@ if (empty($_SESSION["email"])) {
     ********************-->
 
     <!-- Main wrapper start -->
-    <div id="main-wrapper">
-
-        <!-- Nav header start -->
-        <div class="nav-header">
-            <div class="brand-logo">
-                <a href="#">
-                    <span class="brand-title"></span>
-                </a>
-            </div>
-        </div>
-        <!-- Nav header end -->
-
-        <!-- Header start -->
-        <div class="header">
-            <div class="header-content d-flex justify-content-between align-items-center">
-
-                <div class="nav-control">
-                    <button class="hamburger btn">
-                        <span class="toggle-icon"><i class="icon-menu"></i></span>
-                    </button>
-                </div>
-                <div class="text-center">
-                    <h2 class="pt-3">Employee Management System</h2>
-                </div>
-
-            </div>
-        </div>
-        <!-- Header end -->
+    <div id="main-wrapper" class="d-flex">
 
         <!-- Sidebar start -->
-        <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;">
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary">
             <a href="/"
                 class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                 <svg class="bi pe-none me-2" width="40" height="32">

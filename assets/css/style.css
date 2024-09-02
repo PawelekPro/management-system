@@ -10,3 +10,19 @@
     justify-content: center;
     z-index: 9999;
 }
+
+#main-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.content-body {
+    flex: 1;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    overflow-y: auto;
+}
