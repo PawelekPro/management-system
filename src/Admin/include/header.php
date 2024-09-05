@@ -109,6 +109,7 @@ if (empty($_SESSION["email"])) {
                         </a>
                     </li>
                 </ul>
+                <hr>
                 <div class="dropdown">
                     <a href="#"
                         class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
@@ -131,10 +132,6 @@ if (empty($_SESSION["email"])) {
 
             <!-- Content body start -->
             <div class="content-body">
-
-                <div class="content-body flex-grow-1">
-                    <!-- Your content here... -->
-                </div>
 
                 <!-- row -->
                 <div class="container-fluid">

@@ -26,3 +26,59 @@
     height: 100vh;
     overflow-y: auto;
 }
+
+/* Color Palette */
+.bg-admin-card,
+.bg-employee-card,
+.bg-leave-card {
+    background-color: #1976d2;
+}
+
+.bg-admin-title,
+.bg-employee-title,
+.bg-leave-title {
+    background-color: #1976d2;
+    color: #ffffff;
+}
+
+.btn-admin,
+.btn-employee {
+    background-color: #2667ff;
+    border: none;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-admin:hover,
+.btn-employee:hover {
+    background-color: #3f8efc;
+    color: #ffffff;
+}
+
+.bg-leadership-board {
+    background-color: #f8f9fa;
+    /* Light background for table */
+}
+
+.text-leadership-title {
+    color: #000000;
+    /* Dark Blue for leadership board title */
+}
+
+.bg-table-header {
+    background-color: #35374B;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+    /* Subtle hover effect for table rows */
+}
+
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

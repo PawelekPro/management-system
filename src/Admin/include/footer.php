@@ -1,6 +1,7 @@
 </div>
-<!-- #/ container -->
+
 </div>
+
 </div>
 <!--**********************************
             Content body end
