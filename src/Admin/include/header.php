@@ -48,109 +48,93 @@ if (empty($_SESSION["email"])) {
     ********************-->
 
     <!-- Main wrapper start -->
-    <div id="main-wrapper" class="d-flex">
+    <div id="main-wrapper" class="d-flex flex-column min-vh-100">
 
-        <!-- Sidebar start -->
-        <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary">
-            <a href="/"
-                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <svg class="bi pe-none me-2" width="40" height="32">
-                    <use xlink:href="#bootstrap"></use>
-                </svg>
-                <span class="fs-4">Admin Panel</span>
-            </a>
-            <hr>
-            <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                    <a href="./dashboard.php" class="nav-link active" aria-current="page">
-                        <i class="bi bi-speedometer2 me-2"></i>
-                        Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link link-body-emphasis has-arrow" data-bs-toggle="collapse"
-                        data-bs-target="#employeeMenu">
-                        <i class="bi bi-people-fill me-2"></i>
-                        Employee
-                        <i class="bi bi-chevron-right float-end"></i>
-                    </a>
-                    <ul class="collapse list-unstyled ms-3" id="employeeMenu">
-                        <li><a href="./add-employee.php" class="nav-link link-body-emphasis"><i
-                                    class="bi bi-person-plus-fill me-2"></i>Add Employee</a></li>
-                        <li><a href="./manage-employee.php" class="nav-link link-body-emphasis"><i
-                                    class="bi bi-person-lines-fill me-2"></i>Manage Employee</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="nav-link link-body-emphasis has-arrow" data-bs-toggle="collapse"
-                        data-bs-target="#adminMenu">
-                        <i class="bi bi-person-badge-fill me-2"></i>
-                        Admin
-                        <i class="bi bi-chevron-right float-end"></i>
-                    </a>
-                    <ul class="collapse list-unstyled ms-3" id="adminMenu">
-                        <li><a href="./add-admin.php" class="nav-link link-body-emphasis"><i
-                                    class="bi bi-person-plus-fill me-2"></i>Add Admin</a></li>
-                        <li><a href="./manage-admin.php" class="nav-link link-body-emphasis"><i
-                                    class="bi bi-person-lines-fill me-2"></i>Manage Admins</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="./manage-leave.php" class="nav-link link-body-emphasis">
-                        <i class="bi bi-calendar-check-fill me-2"></i>
-                        Manage Employee Leave
-                    </a>
-                </li>
-                <li>
-                    <a href="./logout.php" class="nav-link link-body-emphasis">
-                        <i class="bi bi-box-arrow-right me-2"></i>
-                        Logout
-                    </a>
-                </li>
-            </ul>
-            <div class="dropdown">
-                <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                    <strong>mdo</strong>
+        <div class="d-flex flex-grow-1">
+            <!-- Sidebar start -->
+            <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary">
+                <a href="/"
+                    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                    <svg class="bi pe-none me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                    <span class="fs-4">Admin Panel</span>
                 </a>
-                <ul class="dropdown-menu text-small shadow">
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="./dashboard.php" class="nav-link active" aria-current="page">
+                            <i class="bi bi-speedometer2 me-2"></i>
+                            Dashboard
+                        </a>
                     </li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    <li>
+                        <a href="#" class="nav-link link-body-emphasis has-arrow" data-bs-toggle="collapse"
+                            data-bs-target="#employeeMenu">
+                            <i class="bi bi-people-fill me-2"></i>
+                            Employee
+                            <i class="bi bi-chevron-right float-end"></i>
+                        </a>
+                        <ul class="collapse list-unstyled ms-3" id="employeeMenu">
+                            <li><a href="./add-employee.php" class="nav-link link-body-emphasis"><i
+                                        class="bi bi-person-plus-fill me-2"></i>Add Employee</a></li>
+                            <li><a href="./manage-employee.php" class="nav-link link-body-emphasis"><i
+                                        class="bi bi-person-lines-fill me-2"></i>Manage Employee</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link link-body-emphasis has-arrow" data-bs-toggle="collapse"
+                            data-bs-target="#adminMenu">
+                            <i class="bi bi-person-badge-fill me-2"></i>
+                            Admin
+                            <i class="bi bi-chevron-right float-end"></i>
+                        </a>
+                        <ul class="collapse list-unstyled ms-3" id="adminMenu">
+                            <li><a href="./add-admin.php" class="nav-link link-body-emphasis"><i
+                                        class="bi bi-person-plus-fill me-2"></i>Add Admin</a></li>
+                            <li><a href="./manage-admin.php" class="nav-link link-body-emphasis"><i
+                                        class="bi bi-person-lines-fill me-2"></i>Manage Admins</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./manage-leave.php" class="nav-link link-body-emphasis">
+                            <i class="bi bi-calendar-check-fill me-2"></i>
+                            Manage Employee Leave
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./logout.php" class="nav-link link-body-emphasis">
+                            <i class="bi bi-box-arrow-right me-2"></i>
+                            Logout
+                        </a>
+                    </li>
                 </ul>
-            </div>
-        </div>
-
-        <!-- Sidebar end -->
-
-        <!-- Content body start -->
-        <div class="content-body">
-
-            <div class="modal fade" id="showModal" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div id="modalHead" class="modal-header">
-                            <button id="modal_cross_btn" type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p id="addMsg" class="text-center fw-bold"></p>
-                        </div>
-                        <div class="modal-footer">
-                            <div class="mx-auto">
-                                <a type="button" id="linkBtn" href="#" class="btn btn-primary">Add Expense For the
-                                    Day</a>
-                                <a type="button" id="closeBtn" href="#" data-bs-dismiss="modal"
-                                    class="btn btn-primary">Close</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="dropdown">
+                    <a href="#"
+                        class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                        <strong>mdo</strong>
+                    </a>
+                    <ul class="dropdown-menu text-small shadow">
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- row -->
-            <div class="container-fluid">
+            <!-- Sidebar end -->
+
+            <!-- Content body start -->
+            <div class="content-body">
+
+                <div class="content-body flex-grow-1">
+                    <!-- Your content here... -->
+                </div>
+
+                <!-- row -->
+                <div class="container-fluid">
