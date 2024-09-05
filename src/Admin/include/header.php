@@ -26,9 +26,9 @@ if (empty($_SESSION["email"])) {
     <script src="../../../assets/plugins/sidebar/js/sidebars.js"></script>
 
     <style>
-        .hidden {
-            display: none;
-        }
+    .hidden {
+        display: none;
+    }
     </style>
 
 </head>
@@ -72,8 +72,9 @@ if (empty($_SESSION["email"])) {
                         data-bs-target="#employeeMenu">
                         <i class="bi bi-people-fill me-2"></i>
                         Employee
+                        <i class="bi bi-chevron-right float-end"></i>
                     </a>
-                    <ul class="collapse list-unstyled" id="employeeMenu">
+                    <ul class="collapse list-unstyled ms-3" id="employeeMenu">
                         <li><a href="./add-employee.php" class="nav-link link-body-emphasis"><i
                                     class="bi bi-person-plus-fill me-2"></i>Add Employee</a></li>
                         <li><a href="./manage-employee.php" class="nav-link link-body-emphasis"><i
@@ -85,8 +86,9 @@ if (empty($_SESSION["email"])) {
                         data-bs-target="#adminMenu">
                         <i class="bi bi-person-badge-fill me-2"></i>
                         Admin
+                        <i class="bi bi-chevron-right float-end"></i>
                     </a>
-                    <ul class="collapse list-unstyled" id="adminMenu">
+                    <ul class="collapse list-unstyled ms-3" id="adminMenu">
                         <li><a href="./add-admin.php" class="nav-link link-body-emphasis"><i
                                     class="bi bi-person-plus-fill me-2"></i>Add Admin</a></li>
                         <li><a href="./manage-admin.php" class="nav-link link-body-emphasis"><i
