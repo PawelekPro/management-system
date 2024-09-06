@@ -68,39 +68,39 @@ if (!empty($name) && !empty($email) && !empty($password)) {
         <div class="row justify-content-center h-100">
             <div class="col-xl-6">
                 <div class="form-input-content">
-                    <div class="card login-form mb-0 shadow-sm border-0 rounded-3">
-                        <div class="card-body pt-4">
+                    <div class="card login-form mb-0 static-card">
+                        <div class="card-body pt-4 shadow">
                             <h4 class="text-center text-leadership-title">Add New Employee</h4>
                             <form method="POST" action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>">
 
-                                <div class="form-group">
+                                <div class="form-group mb-4">
                                     <label class="text-leadership-title">Full Name:</label>
                                     <input type="text" class="form-control" value="<?php echo $name; ?>" name="name">
                                     <?php echo $nameErr; ?>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group mb-4">
                                     <label class="text-leadership-title">Email:</label>
                                     <input type="email" class="form-control" value="<?php echo $email; ?>" name="email">
                                     <?php echo $emailErr; ?>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group mb-4">
                                     <label class="text-leadership-title">Password:</label>
                                     <input type="password" class="form-control" value="<?php echo $password; ?>"
                                         name="pass">
                                     <?php echo $passErr; ?>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="text-leadership-title">Mobile number:</label>
-                                    <input type="number" class="form-control" value="<?php echo $mobileNumber; ?>"
-                                        name="salary">
-                                    <?php echo $salaryErr; ?>
+                                <div class="form-group mb-4">
+                                    <label class="text-leadership-title">Mobile Number:</label>
+                                    <input type="tel" class="form-control" value="<?php echo $mobileNumber; ?>"
+                                        name="mobileNumber" pattern="[0-9]{10}" required>
+                                    <?php echo $mobileNumberErr; ?>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="text-leadership-title">Date-of-Birth:</label>
+                                <div class="form-group mb-4">
+                                    <label class="text-leadership-title">Date of expiry of the contract:</label>
                                     <input type="date" class="form-control" value="<?php echo $EoC; ?>" name="EoC">
                                 </div>
 
