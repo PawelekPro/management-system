@@ -98,22 +98,22 @@ $empResult = mysqli_query($conn, $sqlEmployeeQuery);
                         <th scope="col">Employee's Id</th>
                         <th scope="col">Employee's Name</th>
                         <th scope="col">Employee's Email</th>
-                        <th scope="col">Salary in Rs.</th>
+                        <th scope="col">Mobile Number</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($emp_info = mysqli_fetch_assoc($empResult)) {
-                        $emp_id = $emp_info["id"];
-                        $emp_name = $emp_info["name"];
-                        $emp_email = $emp_info["email"];
-                        $emp_salary = $emp_info["salary"];
-                    ?>
+                    <?php while ($empInfo = mysqli_fetch_assoc($empResult)) {
+                        $empID = $empInfo["id"];
+                        $empName = $empInfo["name"];
+                        $empEmail = $empInfo["email"];
+                        $empMobNum = $empInfo["mobileNumber"];
+                        ?>
                     <tr>
                         <th><?php echo $index++; ?></th>
-                        <th><?php echo $emp_id; ?></th>
-                        <td><?php echo $emp_name; ?></td>
-                        <td><?php echo $emp_email; ?></td>
-                        <td><?php echo $emp_salary; ?></td>
+                        <th><?php echo $empID; ?></th>
+                        <td><?php echo $empName; ?></td>
+                        <td><?php echo $empEmail; ?></td>
+                        <td><?php echo $empMobNum; ?></td>
                     </tr>
                     <?php } ?>
                 </tbody>
