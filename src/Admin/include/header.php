@@ -26,9 +26,9 @@ if (empty($_SESSION["email"])) {
     <script src="../../../assets/plugins/sidebar/js/sidebars.js"></script>
 
     <style>
-    .hidden {
-        display: none;
-    }
+        .hidden {
+            display: none;
+        }
     </style>
 
 </head>
