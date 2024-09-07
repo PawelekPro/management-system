@@ -26,9 +26,9 @@ if (empty($_SESSION["email"])) {
     <script src="../../../assets/plugins/sidebar/js/sidebars.js"></script>
 
     <style>
-    .hidden {
-        display: none;
-    }
+        .hidden {
+            display: none;
+        }
     </style>
 
 </head>
@@ -114,7 +114,8 @@ if (empty($_SESSION["email"])) {
                     <a href="#"
                         class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                        <img src="uploads/<?php echo $_SESSION['picturePath']; ?>" alt="" width="32" height="32"
+                            class="rounded-circle me-2">
                         <strong>mdo</strong>
                     </a>
                     <ul class="dropdown-menu text-small shadow">
@@ -132,6 +133,30 @@ if (empty($_SESSION["email"])) {
 
             <!-- Content body start -->
             <div class="content-body">
+
+                <div class="modal fade" id="showModal" data-backdrop="static" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div id="modalHead" class="modal-header">
+                                <button id="modal_cross_btn" type="button" class="close" data-dismiss="modal"
+                                    aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p id="addMsg" class="text-center font-weight-bold"></p>
+                            </div>
+                            <div class="modal-footer ">
+                                <div class="mx-auto">
+                                    <a type="button" id="linkBtn" href="#" class="btn btn-primary">Add Expense For the
+                                        Day</a>
+                                    <a type="button" id="closeBtn" href="#" data-dismiss="modal"
+                                        class="btn btn-primary">Close</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- row -->
                 <div class="container-fluid">

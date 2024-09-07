@@ -5,13 +5,15 @@ require_once "include/header.php";
 <?php
 require_once "../Config/utils.php";
 
-$nameErr = $emailErr = $passErr = "";
+$nameErr = $emailErr = $passErr = $mobileNumberErr = "";
 $name = $email = $password = $gender = $EoC = $mobileNumber = null;
+$picturePath = "defualt-user-icon.png";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $gender = !empty($_REQUEST["gender"]) ? $_REQUEST["gender"] : "";
     $EoC = !empty($_REQUEST["EoC"]) ? $_REQUEST["EoC"] : "";
+    $mobileNumber = !empty($_REQUEST["mobileNumber"]) ? $_REQUEST["mobileNumber"] : "";
 
     if (empty($_REQUEST["name"])) {
         $nameErr = "<p style='color:red'>* Name is required</p>";
@@ -42,8 +44,9 @@ if (!empty($name) && !empty($email) && !empty($password)) {
         $emailErr = "<p style='color:red'>* Given email is already registered</p>";
         debugToConsole("Email $email already registered!");
     } else {
-        $sqlInsertQuery = "INSERT INTO user(name, email, password, EoC, gender, mobileNumber) 
-            VALUES ('$name', '$email', '$password', '$EoC', '$gender', '$mobileNumber')";
+        debugToConsole("Adding entry to database: $name, $email, $mobileNumber, $EoC, $gender");
+        $sqlInsertQuery = "INSERT INTO user(name, email, password, EoC, gender, mobileNumber, picturePath) " .
+                  "VALUES ('$name', '$email', '$password', '$EoC', '$gender', '$mobileNumber', '$picturePath')";
         $insertResult = mysqli_query($conn, $sqlInsertQuery);
         if ($insertResult) {
             $name = $email = $EoC = $gender = $pass = $mobileNumber = "";
@@ -54,7 +57,7 @@ if (!empty($name) && !empty($email) && !empty($password)) {
                             $('#linkBtn').attr('href', 'manage-employee.php');
                             $('#linkBtn').text('View Employees');
                             $('#addMsg').text('Employee Added Successfully!');
-                            $('#closeBtn').text('Add More?');
+                            $('#closeBtn').text('Add Next Employee');
                         })
                      </script>
                      ";
@@ -88,14 +91,14 @@ if (!empty($name) && !empty($email) && !empty($password)) {
                                 <div class="form-group mb-4">
                                     <label class="text-leadership-title">Password:</label>
                                     <input type="password" class="form-control" value="<?php echo $password; ?>"
-                                        name="pass">
+                                        name="password">
                                     <?php echo $passErr; ?>
                                 </div>
 
                                 <div class="form-group mb-4">
                                     <label class="text-leadership-title">Mobile Number:</label>
-                                    <input type="tel" class="form-control" value="<?php echo $mobileNumber; ?>"
-                                        name="mobileNumber" pattern="[0-9]{10}" required>
+                                    <input id="phone" type="tel" class="form-control"
+                                        value="<?php echo $mobileNumber; ?>" name="mobileNumber" required>
                                     <?php echo $mobileNumberErr; ?>
                                 </div>
 
