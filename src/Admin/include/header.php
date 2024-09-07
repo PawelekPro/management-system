@@ -26,9 +26,9 @@ if (empty($_SESSION["email"])) {
     <script src="../../../assets/plugins/sidebar/js/sidebars.js"></script>
 
     <style>
-        .hidden {
-            display: none;
-        }
+    .hidden {
+        display: none;
+    }
     </style>
 
 </head>
@@ -136,27 +136,28 @@ if (empty($_SESSION["email"])) {
 
                 <div class="modal fade" id="showModal" data-backdrop="static" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div id="modalHead" class="modal-header">
+                        <div class="modal-content"
+                            style="border-radius: 12px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);">
+                            <div id="modalHead" class="modal-header bg-admin-title">
                                 <button id="modal_cross_btn" type="button" class="close" data-dismiss="modal"
-                                    aria-label="Close">
+                                    aria-label="Close" style="color: white;">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
-                                <p id="addMsg" class="text-center font-weight-bold"></p>
+                            <div class="modal-body bg-leadership-board">
+                                <p id="addMsg" class="text-center font-weight-bold text-leadership-title"></p>
                             </div>
-                            <div class="modal-footer ">
+                            <div class="modal-footer">
                                 <div class="mx-auto">
-                                    <a type="button" id="linkBtn" href="#" class="btn btn-primary">Add Expense For the
-                                        Day</a>
+                                    <a type="button" id="linkBtn" href="#" class="btn btn-admin">Add</a>
                                     <a type="button" id="closeBtn" href="#" data-dismiss="modal"
-                                        class="btn btn-primary">Close</a>
+                                        class="btn btn-employee">Close</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
 
                 <!-- row -->
                 <div class="container-fluid">
