@@ -34,15 +34,15 @@ CREATE TABLE `admin` (
   `gender` varchar(10) DEFAULT NULL,
   `dob` varchar(15) DEFAULT NULL,
   `password` varchar(75) NOT NULL,
-  `dp` varchar(255) NOT NULL
+  `picturePath` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `name`, `email`, `gender`, `dob`, `password`, `dp`) VALUES
-(0, 'admin', 'admin1@admin.com', 'Male', '1998-02-02', 'admin', '');
+INSERT INTO `admin` (`id`, `name`, `email`, `gender`, `dob`, `password`, `picturePath`) VALUES
+(0, 'admin', 'admin1@admin.com', 'Male', '1998-02-02', 'admin', 'default-admin-icon.png');
 
 -- --------------------------------------------------------
 
@@ -58,8 +58,8 @@ CREATE TABLE `user` (
   `gender` varchar(10) DEFAULT NULL,
   `EoC` varchar(255) DEFAULT NULL,
   `password` varchar(75) NOT NULL,
-  `mobileNumber` int(15) NOT NULL,
-  `dp` varchar(255) NOT NULL
+  `mobileNumber` varchar(255) NOT NULL,
+  `picturePath` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
