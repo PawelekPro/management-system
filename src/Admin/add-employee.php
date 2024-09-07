@@ -7,7 +7,7 @@ require_once "../Config/utils.php";
 
 $nameErr = $emailErr = $passErr = $mobileNumberErr = "";
 $name = $email = $password = $gender = $EoC = $mobileNumber = null;
-$picturePath = "defualt-user-icon.png";
+$picturePath = "default-user-icon.png";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
