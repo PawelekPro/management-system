@@ -12,55 +12,55 @@ $index = 1;
 ?>
 
 <style>
-    table {
-        width: 100%;
-        border-spacing: 0;
-        border-collapse: collapse;
-    }
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
 
-    th {
-        background-color: #1976d2;
-        /* Matches header color for table */
-        color: #ffffff;
-    }
+th {
+    background-color: #1976d2;
+    /* Matches header color for table */
+    color: #ffffff;
+}
 
-    tr:nth-child(even) {
-        background-color: #f1f1f1;
-        /* Subtle background color for even rows */
-    }
+tr:nth-child(even) {
+    background-color: #f1f1f1;
+    /* Subtle background color for even rows */
+}
 
-    tr:hover {
-        background-color: #e3f2fd;
-        /* Light blue hover effect */
-    }
+tr:hover {
+    background-color: #e3f2fd;
+    /* Light blue hover effect */
+}
 
-    .container {
-        background-color: #ffffff;
-        /* White background for the container */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        /* Shadow effect for container */
-        border-radius: 12px;
-        padding: 20px;
-        margin-top: 20px;
-    }
+.container {
+    background-color: #ffffff;
+    /* White background for the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Shadow effect for container */
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+}
 
-    .text-center h4 {
-        color: #000000;
-        /* Header color matches your color palette */
-    }
+.text-center h4 {
+    color: #000000;
+    /* Header color matches your color palette */
+}
 
-    .btn-primary {
-        background-color: #2667ff;
-        /* Button color */
-        border: none;
-        color: #ffffff;
-        transition: background-color 0.3s ease;
-    }
+.btn-primary {
+    background-color: #2667ff;
+    /* Button color */
+    border: none;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
 
-    .btn-primary:hover {
-        background-color: #3f8efc;
-        /* Button hover effect */
-    }
+.btn-primary:hover {
+    background-color: #3f8efc;
+    /* Button hover effect */
+}
 </style>
 
 
@@ -116,27 +116,28 @@ $index = 1;
                             $pictureUrl = "uploads/default-user-icon.png";
                         }
                         ?>
-                        <tr>
-                            <td><?php echo $index; ?></td>
-                            <td><?php echo $id; ?></td>
-                            <td>
-                                <img src="<?php echo $pictureUrl; ?>" alt="Profile Picture" width="50" height="50"
-                                    class="rounded-circle">
-                            </td>
-                            <td><?php echo $name; ?></td>
-                            <td><?php echo $email; ?></td>
-                            <td><?php echo $gender; ?></td>
-                            <td><?php echo $EoC; ?></td>
-                            <td><?php echo $mobileNumber; ?></td>
-                            <td>
-                                <?php
+                <tr>
+                    <td><?php echo $index; ?></td>
+                    <td><?php echo $id; ?></td>
+                    <td>
+                        <img src="<?php echo $pictureUrl; ?>" alt="Profile Picture" width="50" height="50"
+                            class="rounded-circle">
+                    </td>
+                    <td><?php echo $name; ?></td>
+                    <td><?php echo $email; ?></td>
+                    <td><?php echo $gender; ?></td>
+                    <td><?php echo $EoC; ?></td>
+                    <td><?php echo $mobileNumber; ?></td>
+                    <td>
+                        <?php
                                 $edit_icon = "<a href='edit-employee.php?id={$id}' class='btn btn-primary btn-sm me-2' style='font-size: 16px;'><i class='bi bi-pencil-square'></i></a>";
-                                $delete_icon = "<a href='delete-employee.php?id={$id}' class='btn btn-primary btn-sm' style='font-size: 16px;'><i class='bi bi-trash'></i></a>";
+                                // Delete button (Triggers Modal)
+                                $delete_icon = "<button class='btn btn-danger btn-sm' style='font-size: 16px;' data-bs-toggle='modal' data-bs-target='#deleteModal' onclick='setDeleteEmployeeId({$id})'><i class='bi bi-trash'></i></button>";
                                 echo $edit_icon . $delete_icon;
                                 ?>
-                            </td>
-                        </tr>
-                        <?php
+                    </td>
+                </tr>
+                <?php
                         $index++;
                     }
                 } else {
@@ -156,6 +157,34 @@ $index = 1;
     </div>
 </div>
 
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to remove this employee?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <form id="deleteForm" method="POST" action="delete-employee.php">
+                    <input type="hidden" id="employeeId" name="id" value="">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Function to set employee ID in the modal form
+function setDeleteEmployeeId(id) {
+    document.getElementById('employeeId').value = id;
+}
+</script>
 
 <?php require_once "include/footer.php";
 ?>
