@@ -53,7 +53,7 @@ if (!empty($name) && !empty($email) && !empty($password)) {
             echo "<script>
                         $(document).ready( function(){
                             $('#showModal').modal('show');
-                            $('#modalHead').hide();
+                            $('#modalHeadTitle').text('Employee added');
                             $('#linkBtn').attr('href', 'manage-employee.php');
                             $('#linkBtn').text('View Employees');
                             $('#addMsg').text('Employee Added Successfully!');

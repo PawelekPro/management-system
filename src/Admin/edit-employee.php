@@ -71,11 +71,11 @@ if (!empty($name) && !empty($email) && !empty($password)) {
         echo "<script>
             $(document).ready(function(){
                 $('#showModal').modal('show');
-                $('#modalHead').hide();
+                $('#modalHeadTitle').text('Employee data updated');
                 $('#linkBtn').attr('href', 'manage-employee.php');
                 $('#linkBtn').text('View Employees');
                 $('#addMsg').text('Profile Edited Successfully!');
-                $('#closeBtn').text('Edit Again?');
+                $('#closeBtn').text('Continue editing');
             });
          </script>";
     }

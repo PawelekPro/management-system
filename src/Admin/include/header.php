@@ -26,9 +26,9 @@ if (empty($_SESSION["email"])) {
     <script src="../../../assets/plugins/sidebar/js/sidebars.js"></script>
 
     <style>
-    .hidden {
-        display: none;
-    }
+        .hidden {
+            display: none;
+        }
     </style>
 
 </head>
@@ -135,30 +135,28 @@ if (empty($_SESSION["email"])) {
             <div class="content-body">
 
                 <!-- Modal Structure -->
-                <div class="modal fade" id="showModal" data-backdrop="static" tabindex="-1" aria-hidden="true">
+                <div class="modal fade" id="showModal" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
 
-                            <!-- Modal Header with Rounded Corners -->
-                            <div id="modalHead" class="modal-header bg-admin-title">
-                                <button id="modal_cross_btn" type="button" class="close" data-dismiss="modal"
-                                    aria-label="Close" style="color: white;">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                            <!-- Header -->
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalHeadTitle">Info</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
 
-                            <!-- Modal Body -->
-                            <div class="modal-body bg-leadership-board">
-                                <p id="addMsg" class="text-center font-weight-bold text-leadership-title"></p>
+                            <!-- Content -->
+                            <div class="modal-body text-center">
+                                <p id="addMsg" class="text-center font-weight-bold text-leadership-title">Message</p>
                             </div>
 
-                            <!-- Modal Footer with Button Spacing -->
+                            <!-- Footer with buttons -->
                             <div class="modal-footer">
                                 <div class="mx-auto">
-                                    <a type="button" id="linkBtn" href="#" class="btn btn-admin me-2"
-                                        style="margin-right: 10px;">Add</a>
-                                    <a type="button" id="closeBtn" href="#" data-dismiss="modal"
-                                        class="btn btn-employee">Close?</a>
+                                    <a type="button" id="linkBtn" href="#" class="btn btn-admin me-2">firstAction</a>
+                                    <button type="button" id="closeBtn" class="btn btn-employee"
+                                        data-bs-dismiss="modal">secondAction</button>
                                 </div>
                             </div>
                         </div>
