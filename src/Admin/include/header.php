@@ -26,9 +26,9 @@ if (empty($_SESSION["email"])) {
     <script src="../../../assets/plugins/sidebar/js/sidebars.js"></script>
 
     <style>
-        .hidden {
-            display: none;
-        }
+    .hidden {
+        display: none;
+    }
     </style>
 
 </head>
@@ -155,7 +155,7 @@ if (empty($_SESSION["email"])) {
                             <div class="modal-footer">
                                 <div class="mx-auto">
                                     <a type="button" id="linkBtn" href="#" class="btn btn-admin me-2">firstAction</a>
-                                    <button type="button" id="closeBtn" class="btn btn-employee"
+                                    <button type="button" id="closeBtn" class="btn btn-secondary"
                                         data-bs-dismiss="modal">secondAction</button>
                                 </div>
                             </div>
