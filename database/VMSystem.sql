@@ -32,7 +32,6 @@ CREATE TABLE `admin` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `gender` varchar(10) DEFAULT NULL,
-  `dob` varchar(15) DEFAULT NULL,
   `password` varchar(75) NOT NULL,
   `picturePath` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -41,8 +40,8 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `name`, `email`, `gender`, `dob`, `password`, `picturePath`) VALUES
-(0, 'admin', 'admin1@admin.com', 'Male', '1998-02-02', 'admin', 'default-admin-icon.png');
+INSERT INTO `admin` (`id`, `name`, `email`, `gender`, `password`, `picturePath`) VALUES
+(0, 'admin', 'admin1@admin.com', 'Male', 'admin', 'default-admin-icon.png');
 
 -- --------------------------------------------------------
 
